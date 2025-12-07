@@ -1,0 +1,41 @@
+---
+sidebar_position: 2
+title: Robot Kinematics and Dynamics
+---
+import SummarizeButton from "@site/src/components/SummarizeButton";
+import QAButton from "@site/src/components/QAButton";
+
+This chapter delves into the mathematical foundations of robot motion, specifically kinematics and dynamics, which are crucial for understanding how robots move and interact with their environment.
+
+## Robot Kinematics
+Kinematics describes the motion of robots without considering the forces and torques that cause the motion.
+
+### Forward Kinematics
+Calculates the position and orientation of the end-effector given the joint angles.
+
+```python
+def forward_kinematics(joint_angles):
+    # Implementation details for calculating end-effector pose
+    pass
+```
+
+### Inverse Kinematics
+Calculates the joint angles required to achieve a desired end-effector position and orientation.
+
+## Robot Dynamics
+Dynamics deals with the relationship between the forces and torques applied to a robot and the resulting motion.
+
+### Equations of Motion
+Typically derived using methods like Lagrange's equations or Newton-Euler formulation.
+<SummarizeButton />
+<QAButton />
+
+```
+M(q)q̈ + C(q,q̇)q̇ + G(q) = τ
+```
+Where:
+*   `M(q)`: Mass matrix
+*   `C(q,q̇)`: Coriolis and centrifugal forces
+*   `G(q)`: Gravity forces
+*   `τ`: Joint torques
+```

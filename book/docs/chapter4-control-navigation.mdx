@@ -1,0 +1,46 @@
+---
+sidebar_position: 4
+title: Robot Control and Navigation
+---
+import SummarizeButton from "@site/src/components/SummarizeButton";
+import QAButton from "@site/src/components/QAButton";
+
+This chapter focuses on the control strategies that enable humanoid robots to execute desired movements and navigate complex environments effectively and safely.
+
+## Robot Control Architectures
+Different approaches to controlling robot motion.
+
+### Joint-Space Control
+Directly controls each joint to achieve desired angles or torques.
+
+### Task-Space Control
+Controls the end-effector's position and orientation in Cartesian space.
+
+```cpp
+// Example: PID controller for a joint
+double calculate_pid_output(double setpoint, double current_value, double dt) {
+    // PID logic
+    return output;
+}
+```
+
+## Locomotion and Balance
+Specific challenges in controlling legged robots.
+
+### Walking Gaits
+*   Static walking
+*   Dynamic walking
+
+### Balance Control
+Maintaining stability using concepts like Zero Moment Point (ZMP) and Center of Pressure (CoP).
+
+## Navigation
+Enabling robots to move from one point to another while avoiding obstacles.
+
+### Path Planning
+Generating optimal or feasible paths from start to goal.
+
+### Obstacle Avoidance
+Reactive and planned strategies to prevent collisions.
+<SummarizeButton />
+<QAButton />
