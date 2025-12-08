@@ -9,26 +9,26 @@ import os
 app = FastAPI(title="Panaversity RAG Backend")
 
 # CORS
-#app.add_middleware(
-#    CORSMiddleware,
-#    allow_origins=[
-#        "http://localhost:3000",    # Docusaurus dev
-#        "https://your-github-pages-url",  # (add later)
-#    ],
-#    allow_credentials=True,
-#    allow_methods=["*"],
-#    allow_headers=["*"],
-#)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",    # Docusaurus dev
+        "https://your-github-pages-url",  # (add later)
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Health check route
-#@app.get("/")
-#def root():
- #   return {"status": "RAG API running successfully"}
+@app.get("/")
+def root():
+   return {"status": "RAG API running successfully"}
 
 # RAG endpoints
 #app.include_router(rag_router, prefix="/rag")
 # Summarizer endpoints
 #app.include_router(summarizer_router, prefix="/summarizer", tags=["Summarizer"])
 
-#app.include_router(qa_router, prefix="/qa")
+app.include_router(qa_router, prefix="/qa")
 #app.include_router(translate_router, prefix="/translate")
