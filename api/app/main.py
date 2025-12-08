@@ -30,5 +30,5 @@ def root():
 # Summarizer endpoints
 #app.include_router(summarizer_router, prefix="/summarizer", tags=["Summarizer"])
 
-app.include_router(qa_router, prefix="/qa")
-app.include_router(translate_router, prefix="/translate")
+#app.include_router(qa_router, prefix="/qa")
+#app.include_router(translate_router, prefix="/translate")
