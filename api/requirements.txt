@@ -10,10 +10,6 @@ qdrant-client
 psycopg2-binary
 sqlalchemy
 
-# OpenAI (for chat completion if needed)
-openai>=1.3.6
-tiktoken
-
 # Gemini (Google Generative AI embeddings)
 google-generativeai
 

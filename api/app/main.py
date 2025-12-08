@@ -4,7 +4,7 @@ from app.routes.rag import router as rag_router
 from app.routes.summarizer import router as summarizer_router
 from app.routes.qa import router as qa_router
 from app.routes.translate import router as translate_router
-import os
+
 
 app = FastAPI(title="Panaversity RAG Backend")
 

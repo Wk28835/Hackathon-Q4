@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 // Interfaces
 interface Source {
   path: string;
@@ -72,29 +72,34 @@ const ChatIcon = () => (
 );
 
 
-// --- Custom Colors ---
+// 
 const COLOR_ACCENT = "#00D0FF";
 const COLOR_BACKGROUND = "#FFFFFF";
 const COLOR_CARD_BG = "#F5F8FA";
 const COLOR_TEXT_DARK = "#10151C";
 const COLOR_ACCENT_TEXT = "#005F7A";
-// ---
+//
 
 export default function RAGChatbot() {
+   const { siteConfig } = useDocusaurusContext();
+    // Read the variable from customFields
+    const RAG_API_URL = siteConfig.customFields.RAG_API_URL;
+    
     const [isOpen, setIsOpen] = useState(false); // 🔑 NEW: Toggle visibility state
-  const [question, setQuestion] = useState("");
-  const [selectedText, setSelectedText] = useState("");
-  const [useSelectedText, setUseSelectedText] = useState(false);
-  const [response, setResponse] = useState<ChatResponse | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-
-  // Detect selected text (Logic remains the same)
-  useEffect(() => {
-    const handleSelection = () => {
-        const selection = window.getSelection()?.toString();
-      if (selection && selection.trim().length > 0) {
+    const [question, setQuestion] = useState("");
+    const [selectedText, setSelectedText] = useState("");
+    const [useSelectedText, setUseSelectedText] = useState(false);
+    const [response, setResponse] = useState<ChatResponse | null>(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+    
+    
+    
+    // Detect selected text (Logic remains the same)
+    useEffect(() => {
+        const handleSelection = () => {
+            const selection = window.getSelection()?.toString();
+            if (selection && selection.trim().length > 0) {
     setSelectedText(selection);
       } else {
         setSelectedText("");
@@ -111,9 +116,8 @@ export default function RAGChatbot() {
     setLoading(true);
     setResponse(null);
     setError(null);
-    const RAG_API_URL = process.env.NEXT_PUBLIC_RAG_API_URL || "http://127.0.0.1:8000";
-
-    try {
+    
+    try {
       const res = await fetch(`${RAG_API_URL}/rag/query`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

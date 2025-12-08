@@ -25,6 +25,9 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+   customFields: {
+    RAG_API_URL: process.env.NEXT_PUBLIC_RAG_API_URL || 'http://127.0.0.1:8000',
+  },
 
   presets: [
     [
@@ -61,6 +64,7 @@ const config: Config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
+   
    navbar: {
       title: 'Project Atlas',
       logo: {
