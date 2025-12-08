@@ -21,9 +21,9 @@ app = FastAPI(title="Panaversity RAG Backend")
 #)
 
 # Health check route
-@app.get("/")
-def root():
-    return {"status": "RAG API running successfully"}
+#@app.get("/")
+#def root():
+ #   return {"status": "RAG API running successfully"}
 
 # RAG endpoints
 #app.include_router(rag_router, prefix="/rag")
