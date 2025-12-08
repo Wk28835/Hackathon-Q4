@@ -81,7 +81,7 @@ const COLOR_ACCENT_TEXT = "#005F7A";
 // ---
 
 export default function RAGChatbot() {
-  const [isOpen, setIsOpen] = useState(false); // 🔑 NEW: Toggle visibility state
+    const [isOpen, setIsOpen] = useState(false); // 🔑 NEW: Toggle visibility state
   const [question, setQuestion] = useState("");
   const [selectedText, setSelectedText] = useState("");
   const [useSelectedText, setUseSelectedText] = useState(false);
@@ -89,14 +89,13 @@ export default function RAGChatbot() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-const RAG_API_URL = process.env.NEXT_PUBLIC_RAG_API_URL || "http://127.0.0.1:8000";
 
   // Detect selected text (Logic remains the same)
   useEffect(() => {
-    const handleSelection = () => {
-      const selection = window.getSelection()?.toString();
+    const handleSelection = () => {
+        const selection = window.getSelection()?.toString();
       if (selection && selection.trim().length > 0) {
-        setSelectedText(selection);
+    setSelectedText(selection);
       } else {
         setSelectedText("");
         setUseSelectedText(false);
@@ -108,10 +107,11 @@ const RAG_API_URL = process.env.NEXT_PUBLIC_RAG_API_URL || "http://127.0.0.1:800
 
   // Handle Ask (Logic remains the same)
   const handleAsk = async () => {
-    if (!question.trim() || loading) return;
-    setLoading(true);
-    setResponse(null);
-    setError(null);
+    if (!question.trim() || loading) return;
+    setLoading(true);
+    setResponse(null);
+    setError(null);
+    const RAG_API_URL = process.env.NEXT_PUBLIC_RAG_API_URL || "http://127.0.0.1:8000";
 
     try {
       const res = await fetch(`${RAG_API_URL}/rag/query`, {
