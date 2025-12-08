@@ -13,7 +13,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",    # Docusaurus dev
-        "https://your-github-pages-url",  # (add later)
+        "https://hackathonq4-seven.vercel.app",
+        "https://fastapi-test-murex-sigma.vercel.app",  # (add later)
     ],
     allow_credentials=True,
     allow_methods=["*"],
