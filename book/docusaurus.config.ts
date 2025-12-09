@@ -114,8 +114,8 @@ const config: Config = {
         
         // 3. NEW LINKS: ABOUT US & CONTACT US
         // Assumes you have (or will create) corresponding files in src/pages/ (e.g., src/pages/about.tsx)
-        {to: '/', label: 'About Us', position: 'left'},
-        {to: '/', label: 'Contact Us', position: 'left'},
+        {to: '/aboutUs', label: 'About Us', position: 'left'},
+        {to: '/contactUs', label: 'Contact Us', position: 'left'},
         
         // 4. GITHUB LINK (right position remains)
         {
@@ -165,11 +165,11 @@ footer: {
             items: [
                 {
                     label: 'About Us',
-                    to: '/', // Matches the Navbar link
+                    to: '/aboutUs', // Matches the Navbar link
                 },
                 {
                     label: 'Contact Us',
-                    to: '/', // Matches the Navbar link
+                    to: '/contactUs', // Matches the Navbar link
                 },
                 {
                     label: 'Source Code',

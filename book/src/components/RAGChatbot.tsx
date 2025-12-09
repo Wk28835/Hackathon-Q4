@@ -81,8 +81,8 @@ const COLOR_ACCENT_TEXT = "#005F7A";
 //
 
 export default function RAGChatbot() {
-   const { siteConfig } = useDocusaurusContext();
     // Read the variable from customFields
+   const { siteConfig } = useDocusaurusContext();
     const RAG_API_URL = siteConfig.customFields.RAG_API_URL;
     
     const [isOpen, setIsOpen] = useState(false); // 🔑 NEW: Toggle visibility state
