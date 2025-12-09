@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function QAButton() {
   const [loading, setLoading] = useState(false);
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
 
-  const RAG_API_URL = process.env.NEXT_PUBLIC_RAG_API_URL || "http://127.0.0.1:8000";
+      const { siteConfig } = useDocusaurusContext();
+      const RAG_API_URL = siteConfig.customFields.RAG_API_URL;
+
   const askQuestion = async () => {
     setLoading(true);
     setAnswer("");

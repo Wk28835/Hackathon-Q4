@@ -1,13 +1,12 @@
 import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 
 // Define the custom style variables inside the component for easier maintenance
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+ 
   
   // Custom Content Variables
   const MAIN_TITLE = "Project Atlas: Physical AI";
@@ -130,7 +129,7 @@ function HomepageHeader() {
 // --- END: MODIFIED COMPONENT ---
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+  
   return (
     <Layout
       // Changed the title to reflect the new course name
