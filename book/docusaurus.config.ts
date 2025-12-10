@@ -62,9 +62,18 @@ const config: Config = {
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
-      respectPrefersColorScheme: true,
+        // 1. FORCES the site to load in 'dark' mode initially.
+        defaultMode: 'dark', 
+        
+        // 2. REMOVES the theme toggle button (moon/sun icon) from the navbar.
+        disableSwitch: true, 
+        
+        // 3. IGNORES the user's system preference (which defaults to light mode 
+        //    on Vercel/browser environments if not specifically set to dark).
+        respectPrefersColorScheme: false, 
     },
-   
+    // ... rest of themeConfig (navbar, footer, etc.)
+
    navbar: {
       title: 'Project Atlas',
       logo: {
@@ -118,11 +127,7 @@ const config: Config = {
         {to: '/contactUs', label: 'Contact Us', position: 'left'},
         
         // 4. GITHUB LINK (right position remains)
-        {
-          href: '/',
-          label: 'Source',
-          position: 'right',
-        },
+       
       ],
     },
     // Inside themeConfig:
